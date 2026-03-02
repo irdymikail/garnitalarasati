@@ -73,10 +73,10 @@
         }
     </style>
 </head>
-<body class="antialiased pb-20">
+<body class="antialiased pb-10 flex flex-col min-h-screen">
 
     <!-- Hero / Top Section -->
-    <main class="max-w-4xl mx-auto px-6 pt-16 lg:pt-24 pb-16 flex flex-col gap-12 items-center text-center relative">
+    <main class="max-w-4xl mx-auto px-6 pt-16 lg:pt-24 pb-16 flex flex-col gap-12 items-center text-center relative flex-grow">
         
         <div class="bg-premium-dark text-[#e5e0d8] p-6 md:p-8 rounded-tr-3xl rounded-bl-3xl rounded-tl-md rounded-br-md shadow-2xl w-fit relative overflow-hidden">
             <!-- Aksen kilau emas di sudut -->
@@ -157,6 +157,13 @@
 
         </div>
     </section>
+
+    <!-- Footer / Copyright Watermark -->
+    <footer class="w-full mt-auto pt-10 pb-6 text-center border-t border-[#3a3028]/50">
+        <p class="font-serif-custom text-gold/50 text-xs md:text-sm tracking-[0.2em] uppercase">
+            &copy; 2026 Garnita Larasati, X-3
+        </p>
+    </footer>
 
     <!-- Overlay Modal & Book Animation -->
     <div id="book-modal" class="fixed inset-0 bg-[#050403]/90 z-50 flex items-center justify-center opacity-0 invisible pointer-events-none backdrop-blur-md">
