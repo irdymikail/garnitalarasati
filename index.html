@@ -10,24 +10,28 @@
         
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fbfaf8;
-            color: #333;
+            /* Latar belakang diubah ke warna Obsidian/Hitam Kecokelatan agar emasnya menyala */
+            background-color: #120f0d; 
+            color: #e5e0d8;
         }
         
         .font-serif-custom {
             font-family: 'Lora', serif;
         }
 
+        /* Warna emas klasik dan elegan */
         .text-gold {
-            color: #9b7036;
+            color: #d4af37;
         }
         
         .border-gold {
-            border-color: #9b7036;
+            border-color: #d4af37;
         }
         
-        .bg-green-muted {
-            background-color: #5b6b55;
+        /* Mengganti warna merah dengan warna dasar gelap bernuansa premium */
+        .bg-premium-dark {
+            background-color: #1c1815;
+            border: 1px solid #3a3028;
         }
 
         /* --- Animasi Buku Terbuka (3D) --- */
@@ -51,109 +55,103 @@
 
         /* Responsive Cover Open Angle */
         .book-open-desktop { transform: rotateY(-180deg); }
+        
         @media (max-width: 768px) {
-            .book-open-mobile { transform: rotateY(-90deg); opacity: 0; }
+            .book-open-mobile { transform: rotateY(-100deg); }
         }
         
-        /* Animasi kursor pada kartu */
+        /* Animasi kursor pada kartu - dengan glow emas yang elegan */
         .card-hover {
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            border-color: #9b7036;
-            box-shadow: 0 10px 25px -5px rgba(155, 112, 54, 0.2);
+            border-color: #d4af37;
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.15);
+            background-color: #241f1b;
         }
     </style>
 </head>
 <body class="antialiased pb-20">
 
     <!-- Hero / Top Section -->
-    <main class="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-16 flex flex-col lg:flex-row gap-12 lg:gap-24 items-start relative">
+    <main class="max-w-4xl mx-auto px-6 pt-16 lg:pt-24 pb-16 flex flex-col gap-12 items-center text-center relative">
         
-        <!-- Left Content -->
-        <div class="lg:w-1/2 flex flex-col gap-10">
-            <div class="bg-green-muted text-white p-6 md:p-8 rounded-tr-3xl rounded-bl-3xl rounded-tl-md rounded-br-md shadow-lg w-fit">
-                <h1 class="text-2xl md:text-3xl font-bold mb-2">Menenun Jejak Leluhur</h1>
-                <p class="text-sm md:text-base text-gray-200">Gulir ke bawah untuk memahami filosofi dan seni di balik sepotong Kain Tapis.</p>
-            </div>
-
-            <blockquote class="font-serif-custom text-xl md:text-2xl leading-relaxed text-gray-700 italic border-l-4 border-gold pl-6">
-                "Kain Tapis bukan sekadar benang yang disilangkan. Ia adalah doa yang ditenun perlahan, manifestasi keagungan perempuan Lampung yang merawat peradaban lewat ujung jarum dan kilau emas."
-            </blockquote>
+        <div class="bg-premium-dark text-[#e5e0d8] p-6 md:p-8 rounded-tr-3xl rounded-bl-3xl rounded-tl-md rounded-br-md shadow-2xl w-fit relative overflow-hidden">
+            <!-- Aksen kilau emas di sudut -->
+            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-[#d4af37] to-transparent opacity-20"></div>
+            
+            <h1 class="text-2xl md:text-3xl font-bold mb-2 tracking-widest text-gold uppercase font-serif-custom">Menenun Jejak Leluhur</h1>
+            <p class="text-sm md:text-base text-gray-400 font-light">Gulir ke bawah untuk memahami filosofi dan seni di balik sepotong Kain Tapis.</p>
         </div>
 
-        <!-- Right Content (Images) -->
-        <div class="lg:w-1/2 w-full relative h-[400px] flex justify-end">
-            <!-- Main Image Placeholder (like the boy in traditional dress placeholder) -->
-            <div class="w-4/5 h-full bg-[#e8e4db] border border-dashed border-gray-400 flex items-center justify-center p-8 text-center text-gray-500 rounded-sm">
-                <p class="text-sm font-serif-custom italic">[Area untuk foto perempuan pengrajin sedang menyulam Tapis atau sosok berbusana adat Lampung]</p>
-            </div>
+        <blockquote class="font-serif-custom text-xl md:text-3xl leading-relaxed text-[#d4af37] italic border-t-px border-b-px border-gold py-10 px-4 md:px-12 mt-4 relative">
+            <!-- Tanda kutip dekoratif -->
+            <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-5xl text-[#3a3028]">❝</span>
+            "Kain Tapis bukan sekadar benang yang disilangkan. Ia adalah doa yang ditenun perlahan, manifestasi keagungan perempuan Lampung yang merawat peradaban lewat ujung jarum dan kilau emas."
+            <span class="absolute -bottom-10 left-1/2 -translate-x-1/2 text-5xl text-[#3a3028]">❞</span>
+        </blockquote>
 
-            <!-- Overlapping Circular Image (like the Talas on banana leaf) -->
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white flex items-center justify-center">
-                <!-- Fallback to a styled div if image doesn't load, representing gold threads -->
-                <div class="w-full h-full bg-yellow-600 flex items-center justify-center text-white text-xs text-center p-4 bg-[url('https://images.unsplash.com/photo-1605383506161-0f7f2b1580bc?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center">
-                    <span class="bg-black/50 p-2 rounded">Detail Sulam Emas</span>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- Divider Line -->
-    <div class="w-full h-px bg-gray-200 my-8"></div>
+    <div class="w-full h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-30 my-8"></div>
 
     <!-- Features / Grid Section -->
     <section class="max-w-7xl mx-auto px-6 py-16">
         <div class="text-center mb-16">
-            <h2 class="font-serif-custom text-3xl md:text-4xl text-[#7a4c33] font-semibold">Lebih Dari Sekadar Kemewahan</h2>
-            <p class="text-gray-500 mt-4 text-sm md:text-base">Ketuk kartu di bawah ini untuk membuka lembaran ceritanya.</p>
+            <h2 class="font-serif-custom text-3xl md:text-4xl text-gold font-semibold tracking-wide">Lebih Dari Sekadar Kemewahan</h2>
+            <p class="text-gray-400 mt-4 text-sm md:text-base font-light">Ketuk kartu di bawah ini untuk membuka lembaran ceritanya.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <!-- Card 1 -->
-            <div onclick="openBook('sejarah')" class="card-hover bg-[#fefdfb] border-t-4 border-gray-200 p-6 shadow-sm">
-                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-gray-800">Akar Sejarah</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
+            <div onclick="openBook('sejarah')" class="card-hover bg-[#1c1815] border-t-2 border-[#3a3028] p-6 shadow-lg rounded-md relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-[#e5e0d8] group-hover:text-gold transition-colors">Akar Sejarah</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     Diperkirakan telah ada sejak abad ke-2 SM, tradisi menenun di <span class="font-semibold text-gold">Lampung</span> berevolusi. Klik untuk membaca lebih lanjut.
                 </p>
-                <div class="mt-6 text-gold text-xs font-bold tracking-wider uppercase flex items-center gap-2">
-                    Buka Buku <span>→</span>
+                <div class="mt-6 text-gold text-xs font-bold tracking-widest uppercase flex items-center gap-2 opacity-80 group-hover:opacity-100">
+                    Buka Buku <span class="text-lg transition-transform group-hover:translate-x-2">→</span>
                 </div>
             </div>
 
             <!-- Card 2 -->
-            <div onclick="openBook('seni')" class="card-hover bg-[#fefdfb] border-t-4 border-gray-200 p-6 shadow-sm">
-                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-gray-800">Seni Menyulam Emas</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
+            <div onclick="openBook('seni')" class="card-hover bg-[#1c1815] border-t-2 border-[#3a3028] p-6 shadow-lg rounded-md relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-[#e5e0d8] group-hover:text-gold transition-colors">Seni Menyulam Emas</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     Dari teknik *cucuk* hingga *nunggang*. Ketahui bagaimana benang kapas tebal menjadi kanvas mahakarya.
                 </p>
-                <div class="mt-6 text-gold text-xs font-bold tracking-wider uppercase flex items-center gap-2">
-                    Buka Buku <span>→</span>
+                <div class="mt-6 text-gold text-xs font-bold tracking-widest uppercase flex items-center gap-2 opacity-80 group-hover:opacity-100">
+                    Buka Buku <span class="text-lg transition-transform group-hover:translate-x-2">→</span>
                 </div>
             </div>
 
             <!-- Card 3 -->
-            <div onclick="openBook('filosofi')" class="card-hover bg-[#fefdfb] border-t-4 border-gray-200 p-6 shadow-sm">
-                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-gray-800">Filosofi Alam & Hidup</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
+            <div onclick="openBook('filosofi')" class="card-hover bg-[#1c1815] border-t-2 border-[#3a3028] p-6 shadow-lg rounded-md relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-[#e5e0d8] group-hover:text-gold transition-colors">Filosofi Alam & Hidup</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     Tapis adalah bahasa rupa. Mengulik makna motif pucuk rebung, gajah, hingga kapal leluhur.
                 </p>
-                <div class="mt-6 text-gold text-xs font-bold tracking-wider uppercase flex items-center gap-2">
-                    Buka Buku <span>→</span>
+                <div class="mt-6 text-gold text-xs font-bold tracking-widest uppercase flex items-center gap-2 opacity-80 group-hover:opacity-100">
+                    Buka Buku <span class="text-lg transition-transform group-hover:translate-x-2">→</span>
                 </div>
             </div>
 
             <!-- Card 4 -->
-            <div onclick="openBook('matematika')" class="card-hover bg-[#fefdfb] border-t-4 border-gray-200 p-6 shadow-sm">
-                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-gray-800">Matematika Presisi</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
+            <div onclick="openBook('matematika')" class="card-hover bg-[#1c1815] border-t-2 border-[#3a3028] p-6 shadow-lg rounded-md relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <h3 class="font-serif-custom text-xl font-semibold mb-4 text-[#e5e0d8] group-hover:text-gold transition-colors">Matematika Presisi</h3>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
                     Mematahkan mitos seni tradisional tak terukur. Temukan algoritma kuno di balik simetri Tapis.
                 </p>
-                <div class="mt-6 text-gold text-xs font-bold tracking-wider uppercase flex items-center gap-2">
-                    Buka Buku <span>→</span>
+                <div class="mt-6 text-gold text-xs font-bold tracking-widest uppercase flex items-center gap-2 opacity-80 group-hover:opacity-100">
+                    Buka Buku <span class="text-lg transition-transform group-hover:translate-x-2">→</span>
                 </div>
             </div>
 
@@ -161,50 +159,44 @@
     </section>
 
     <!-- Overlay Modal & Book Animation -->
-    <div id="book-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center opacity-0 invisible pointer-events-none backdrop-blur-sm">
+    <div id="book-modal" class="fixed inset-0 bg-[#050403]/90 z-50 flex items-center justify-center opacity-0 invisible pointer-events-none backdrop-blur-md">
         
         <div class="perspective-1500 w-[95vw] md:w-[800px] h-[75vh] md:h-[500px] relative flex justify-center md:justify-end mt-10 md:mt-0">
             
-            <!-- Tombol Tutup -->
-            <button onclick="closeBook()" class="absolute -top-12 md:-top-10 right-0 text-white/70 hover:text-white transition-colors z-[60] flex items-center gap-2 bg-black/50 px-4 py-2 rounded-full">
-                <span class="font-serif-custom text-sm">Tutup Buku</span> 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            <button onclick="closeBook()" class="absolute -top-12 md:-top-10 right-0 text-gold/70 hover:text-gold transition-colors z-[60] flex items-center gap-2 bg-[#1c1815] px-4 py-2 rounded-full border border-[#d4af37]/30">
+                <span class="font-serif-custom text-sm uppercase tracking-widest">Tutup</span> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
 
-            <!-- Halaman Kanan (Isi Konten) -->
-            <!-- PERBAIKAN: Menambahkan overscroll-contain agar scroll tidak "bocor" ke latar belakang -->
-            <div class="absolute w-full md:w-1/2 h-full bg-[#fdfcf8] shadow-2xl p-8 overflow-y-auto overscroll-contain rounded-md md:rounded-l-none md:rounded-r-md z-10 right-0">
-                <h3 id="modal-title" class="font-serif-custom text-2xl md:text-3xl font-bold mb-6 text-[#7a4c33]">Judul Buku</h3>
-                <div id="modal-content" class="text-gray-700 leading-loose space-y-4 text-sm md:text-base font-medium">
-                    <!-- Konten JS disuntikkan di sini -->
+            <!-- Halaman Kanan (Isi Konten) - Tema Gelap Eksklusif -->
+            <div class="absolute w-full md:w-1/2 h-full bg-[#120f0d] border border-[#3a3028] shadow-[0_0_50px_rgba(212,175,55,0.05)] p-8 overflow-y-auto overscroll-contain rounded-md md:rounded-l-none md:rounded-r-md z-10 right-0 custom-scrollbar">
+                <h3 id="modal-title" class="font-serif-custom text-2xl md:text-3xl font-bold mb-6 text-gold tracking-wide">Judul Buku</h3>
+                <div id="modal-content" class="text-gray-300 leading-loose space-y-4 text-sm md:text-base font-light">
                 </div>
                 
-                <!-- Hiasan bawah halaman -->
-                <div class="mt-12 flex justify-center opacity-30">
+                <div class="mt-12 flex justify-center opacity-50">
                     <span class="text-gold font-serif-custom text-2xl">✧ ✧ ✧</span>
                 </div>
             </div>
 
             <!-- Halaman Kiri (Sampul Depan yang Terbuka ke Kiri) -->
-            <!-- PERBAIKAN: Menambahkan pointer-events-none agar elemen sampul tidak menghalangi sentuhan/scroll pada teks di bawahnya -->
             <div id="book-cover" class="absolute w-full md:w-1/2 h-full right-0 transform-origin-left transition-transform duration-1000 ease-[cubic-bezier(0.645,0.045,0.355,1)] z-20 preserve-3d pointer-events-none">
                 
-                <!-- Wujud Sampul Depan -->
-                <div class="absolute inset-0 bg-[#9b7036] rounded-md md:rounded-l-none md:rounded-r-md shadow-2xl backface-hidden flex flex-col items-center justify-center p-8 bg-[url('https://images.unsplash.com/photo-1605383506161-0f7f2b1580bc?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center bg-blend-multiply border-l-4 border-[#5a3a1f]">
-                    <div class="border border-white/40 p-6 md:p-8 text-center backdrop-blur-md bg-black/30 w-full">
-                        <h2 class="font-serif-custom text-2xl md:text-3xl text-white font-bold mb-3 tracking-wide">Ensiklopedia<br>Tapis</h2>
-                        <div class="w-16 h-px bg-gold mx-auto mb-3"></div>
-                        <p class="text-white/80 text-xs tracking-widest uppercase">Sang Bumi Ruwa Jurai</p>
+                <!-- Wujud Sampul Depan: Hitam dengan Bingkai Emas -->
+                <div class="absolute inset-0 bg-[#0a0807] rounded-md md:rounded-l-none md:rounded-r-md shadow-2xl backface-hidden flex flex-col items-center justify-center p-8 bg-[url('https://images.unsplash.com/photo-1605383506161-0f7f2b1580bc?q=80&w=600&auto=format&fit=crop')] bg-cover bg-center bg-blend-overlay border-l border-y border-r-4 border-r-[#d4af37] border-y-[#3a3028] border-l-[#3a3028]">
+                    <div class="border border-[#d4af37] p-6 md:p-8 text-center backdrop-blur-sm bg-[#0a0807]/80 w-full shadow-[inset_0_0_20px_rgba(212,175,55,0.1)]">
+                        <h2 class="font-serif-custom text-2xl md:text-3xl text-gold font-bold mb-3 tracking-widest uppercase">Ensiklopedia<br>Tapis</h2>
+                        <div class="w-16 h-px bg-gold mx-auto mb-4"></div>
+                        <p class="text-gray-400 text-xs tracking-[0.3em] uppercase font-light">Sang Bumi Ruwa Jurai</p>
                     </div>
                 </div>
 
-                <!-- Bagian Dalam Sampul (Hanya terlihat di Desktop) -->
-                <div class="absolute inset-0 bg-[#fefdfb] rounded-md md:rounded-l-none md:rounded-r-md shadow-inner backface-hidden rotate-y-180 hidden md:block border-l border-gray-200">
-                    <div class="w-full h-full p-8 flex flex-col justify-center items-center text-center opacity-20">
-                        <div class="w-32 h-32 border-2 border-dashed border-[#7a4c33] rounded-full flex items-center justify-center mb-4">
-                            <span class="text-[#7a4c33] font-serif-custom text-6xl">T</span>
+                <!-- Bagian Dalam Sampul -->
+                <div class="absolute inset-0 bg-[#120f0d] rounded-md md:rounded-l-none md:rounded-r-md shadow-inner backface-hidden rotate-y-180 hidden md:block border-l border-[#3a3028]">
+                    <div class="w-full h-full p-8 flex flex-col justify-center items-center text-center opacity-30">
+                        <div class="w-32 h-32 border border-gold rounded-full flex items-center justify-center mb-4">
+                            <span class="text-gold font-serif-custom text-6xl">T</span>
                         </div>
-                        <p class="font-serif-custom italic text-gray-800 text-lg">Bagian Dalam Sampul</p>
                     </div>
                 </div>
                 
@@ -213,8 +205,24 @@
         </div>
     </div>
 
+    <style>
+        /* Custom Scrollbar for the modal content to match the dark theme */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #120f0d;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #3a3028;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+
     <script>
-        // Database Konten
         const bookData = {
             sejarah: {
                 title: "Akar Sejarah",
@@ -222,15 +230,15 @@
             },
             seni: {
                 title: "Seni Menyulam Emas",
-                content: "<p>Keistimewaan Kain Tapis terlahir dari perpaduan dua elemen yang kontras: <strong>Kain Inuh</strong> (kain dasar tenun berbahan benang kapas yang kuat) dan <strong>Benang Makau</strong> (benang emas atau perak yang berkilau).</p><p>Proses pembuatannya menolak campur tangan mesin. Semuanya dilakukan murni menggunakan jemari tangan melalui teknik sulam khusus seperti <em>cucuk</em> (menusuk) dan <em>nunggang</em>. Seorang pengrajin Tapis bisa menghabiskan waktu berminggu-minggu hingga berbulan-bulan hanya untuk menyelesaikan satu helai kain.</p><p>Inilah yang membuat Tapis memiliki 'nyawa'. Setiap tusukan jarum adalah manifestasi kesabaran dan dedikasi luar biasa dari perempuan-perempuan Lampung.</p>"
+                content: "<p>Keistimewaan Kain Tapis terlahir dari perpaduan dua elemen yang kontras: <strong class='text-[#d4af37] font-normal'>Kain Inuh</strong> (kain dasar tenun berbahan benang kapas yang kuat) dan <strong class='text-[#d4af37] font-normal'>Benang Makau</strong> (benang emas atau perak yang berkilau).</p><p>Proses pembuatannya menolak campur tangan mesin. Semuanya dilakukan murni menggunakan jemari tangan melalui teknik sulam khusus seperti <em class='text-white'>cucuk</em> (menusuk) dan <em class='text-white'>nunggang</em>. Seorang pengrajin Tapis bisa menghabiskan waktu berminggu-minggu hingga berbulan-bulan hanya untuk menyelesaikan satu helai kain.</p><p>Inilah yang membuat Tapis memiliki 'nyawa'. Setiap tusukan jarum adalah manifestasi kesabaran dan dedikasi luar biasa dari perempuan-perempuan Lampung.</p>"
             },
             filosofi: {
                 title: "Filosofi Alam & Hidup",
-                content: "<p>Bagi masyarakat Lampung, Tapis adalah bahasa rupa yang tak bersuara. Setiap goresan motif benang emasnya merekam filosofi kehidupan dan hubungan manusia dengan alam semesta.</p><p>Motif <em>Pucuk Rebung</em> (tunas bambu) selalu ada di tepian, melambangkan pertumbuhan, harapan, dan tekad yang terus menjulang lurus ke atas. Motif fauna seperti gajah mewakili kekuatan dan kebesaran, sementara naga melambangkan kepemimpinan yang mengayomi.</p><p>Namun yang paling ikonik adalah motif <em>Kapal</em>. Kapal merepresentasikan perjalanan transisi jiwa manusia; dari alam rahim, mengarungi samudra kehidupan di dunia, hingga akhirnya berlayar menuju alam keabadian.</p>"
+                content: "<p>Bagi masyarakat Lampung, Tapis adalah bahasa rupa yang tak bersuara. Setiap goresan motif benang emasnya merekam filosofi kehidupan dan hubungan manusia dengan alam semesta.</p><p>Motif <em class='text-[#d4af37] not-italic'>Pucuk Rebung</em> (tunas bambu) selalu ada di tepian, melambangkan pertumbuhan, harapan, dan tekad yang terus menjulang lurus ke atas. Motif fauna seperti gajah mewakili kekuatan dan kebesaran, sementara naga melambangkan kepemimpinan yang mengayomi.</p><p>Namun yang paling ikonik adalah motif <em class='text-[#d4af37] not-italic'>Kapal</em>. Kapal merepresentasikan perjalanan transisi jiwa manusia; dari alam rahim, mengarungi samudra kehidupan di dunia, hingga akhirnya berlayar menuju alam keabadian.</p>"
             },
             matematika: {
                 title: "Matematika di Balik Presisi",
-                content: "<p>Banyak yang berasumsi bahwa seni tradisional dibuat murni berdasarkan 'perasaan' atau insting. Faktanya, Kain Tapis adalah bukti tak terbantahkan dari kecerdasan matematis dan spasial leluhur kita.</p><p>Dalam menciptakan motif yang simetris sempurna dan presisi, seorang penenun harus menghitung secara akurat setiap helai benang lungsi dan pakan (sebuah sistem matriks/grid kuno). Satu saja kesalahan perhitungan lompatan benang emas, maka geometri keseluruhan motif akan hancur.</p><p>Pembuatan Tapis sejatinya adalah penerapan <em>algoritma</em> tradisional yang rumit, diwariskan dari ibu ke anak perempuannya tanpa perlu menuliskannya di atas kertas rumus.</p>"
+                content: "<p>Banyak yang berasumsi bahwa seni tradisional dibuat murni berdasarkan 'perasaan' atau insting. Faktanya, Kain Tapis adalah bukti tak terbantahkan dari kecerdasan matematis dan spasial leluhur kita.</p><p>Dalam menciptakan motif yang simetris sempurna dan presisi, seorang penenun harus menghitung secara akurat setiap helai benang lungsi dan pakan (sebuah sistem matriks/grid kuno). Satu saja kesalahan perhitungan lompatan benang emas, maka geometri keseluruhan motif akan hancur.</p><p>Pembuatan Tapis sejatinya adalah penerapan <em class='text-[#d4af37] not-italic'>algoritma</em> tradisional yang rumit, diwariskan dari ibu ke anak perempuannya tanpa perlu menuliskannya di atas kertas rumus.</p>"
             }
         };
 
@@ -240,17 +248,12 @@
         const contentEl = document.getElementById('modal-content');
 
         function openBook(key) {
-            // 1. Suntikkan konten sesuai kartu yang diklik
             titleEl.innerHTML = bookData[key].title;
             contentEl.innerHTML = bookData[key].content;
 
-            // Pastikan sampul direset ke posisi tertutup sebelum modal muncul
             cover.classList.remove('book-open-desktop', 'book-open-mobile');
-
-            // 2. Munculkan Modal
             modal.classList.add('active');
 
-            // 3. Picu animasi Buku Terbuka setelah delay kecil agar CSS merender posisi tertutup terlebih dahulu
             setTimeout(() => {
                 if(window.innerWidth > 768) {
                     cover.classList.add('book-open-desktop');
@@ -261,10 +264,7 @@
         }
 
         function closeBook() {
-            // 1. Tutup sampul buku (kembali ke posisi awal menutupi teks)
             cover.classList.remove('book-open-desktop', 'book-open-mobile');
-
-            // 2. Sembunyikan modal setelah animasi sampul selesai menutup (sekitar 800ms)
             setTimeout(() => {
                 modal.classList.remove('active');
             }, 800);
